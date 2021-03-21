@@ -54,10 +54,11 @@ void *ble_host_task(void *param)
     return NULL;
 }
 
+//这就是主函数开始的地方
 int main(void)
 {
     ble_hci_sock_init();
-    nimble_port_init();
+    nimble_port_init(); //初始化ble协议栈和平台相关的东西
 
     /* This example provides GATT Alert service */
     ble_svc_gap_init();

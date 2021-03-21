@@ -777,6 +777,8 @@ ble_hs_init(void)
 #endif
 
     /* Configure the HCI transport to communicate with a host. */
+	//这里是挂钩子函数，将ble_hs_hci_rx_evt函数作为ble_uart_rx_cmd_cb的实际处理函数
+	//将ble_hs_rx_data作为ble_hci_uart_rx_acl_cb的处理函数
     ble_hci_trans_cfg_hs(ble_hs_hci_rx_evt, NULL, ble_hs_rx_data, NULL);
 
 #ifdef MYNEWT
